@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome to Communal Appliances/Tool Sharing Application</title>
+ <link href="css/bootstrap.css" rel="stylesheet" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="lib/angular.js"></script>
+<script src="lib/angular-messages.js"></script>
+<script src="js/Registration.js"></script>
+<script src ="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.2.1/angular-material.js"></script>
+<script src ="lib/angular-animate.js"></script>
+<script src ="lib/angular-aria.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
+ <link href="css/Register.css" rel="stylesheet" />
+</head>
+<body  ng-app ="registration">
+<div class="header1">
+  <h1>Communal Appliance Sharing Network
+  <div class="header1-right">
+    <a class="active" href="#home "><i class="fa fa-home"></i>Login</a>
+    <a class="hover" href="#contact"><i class="fa fa-address-book-o" aria-hidden="true"></i>Contact Us</a>
+  </div>
+  </h1>
+</div>
+<div>
+<h2 class="header2">User Registration</h2>
+ <form ng-controller="registerController" name="myForm"> 
+ <div class="container" >  
+  <label>First Name </label> 
+  <div class="row"> 
+  <div class="column">
+  <input type="text" name="firstname" placeholder= "First Name" size="15" ng-model="firstname" required />   
+  </div>
+  <label>Last Name </label> 
+  <div class="column">
+  <input type="text" name="Lastname" placeholder="Last Name" size="15" ng-model="lastname" required />   
+  </div>
+  </div>  
+  
+ <label>User Name </label>   
+ <div class="row"> 
+  <div class="column">
+
+  <input type="text" name="userName" placeholder= "User Name" size="15" ng-model="registration.UserName"    trade-unique-user-name ng-model-options="{ updateOn: 'blur'}" required />  
+  <div><span class="field-validity-error" ng-show="myForm.userName.$error.tradeUniqueUserName">This user name is not available</span>
+  </div>
+  </div>
+   <label>Phone Number</label>  
+  <div class="column">
+  <input type="tel" name="phone" placeholder="123-456-8901" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="123-456-8901" ng-model="phone"required>   
+  </div>
+  </div>
+ 
+  <label>Password</label>
+  <div class="row"> 
+  <div class="column">
+   <input type="password" name="password" class="form-control" maxlength="15" minlength="6" ng-model="registration.user.password" required />
+            <div ng-messages="myForm.password.$error" ng-messages-include="messages.html"></div>
+   </div>
+ 	<label>Re-Enter Password</label>  
+   <div class="column">
+  <input type="password" name="confirmPassword" class="form-control" 
+                   ng-model="registration.user.confirmPassword" 
+                    compare-to="registration.user.password" required/>
+            <div ng-messages="myForm.confirmPassword.$error" ng-messages-include="messages.html"></div>
+  </div>
+  </div>
+   <label>Street Address</label>
+ <div class="row"> 
+  <div class="column">
+  <textarea cols="45" rows="2" placeholder="Street Address" value="address" ng-model="address" maxlength="45" required/>  
+  </textarea>  
+  </div>
+ <label>Zip code</label>
+  <div class="column">
+ <input type="number" name="zipcode" placeholder="Zip Code" maxlength="10" ng-model="zipcode"required/>  
+ </div> 
+ </div>
+   <label for="email">Email</label>
+    <div class="row"> 
+    <div class="column">
+ 	<input type="email" placeholder="Email Address" name="email" ng-model="email" maxlength="45" required/>  
+ 	<div ng-messages="myForm.email.$error" ng-messages-include="messages.html"></div>
+  	</div>
+ 	<div class="dialog-demo-content" layout="row" layout-wrap="" layout-margin="" layout-align="center">
+     <button  aria-label="Close" type="submit"class="button" ng-click="myForm.$valid && showConfirm($event)">
+      Register
+    </button>
+    </div>
+    <!--   <button  type="submit">Register</button> -->
+   </div>
+ </div>
+</form>
+</div>
+</body>
+
+</html>
