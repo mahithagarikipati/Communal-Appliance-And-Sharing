@@ -1,0 +1,52 @@
+<!DOCTYPE html >
+<html >
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome to Communal Appliances /Tool sharing Application</title>
+<link href="css/bootstrap.css" rel="stylesheet" />
+<script src="lib/angular.js"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <script src="lib/angular-messages.js"></script>
+<script src ="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.2.1/angular-material.js"></script>
+<script src ="lib/angular-animate.js"></script>
+<script src ="lib/angular-aria.js"></script>
+<script src="js/AngularDemo.js"></script>
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
+<link href="css/Register.css" rel="stylesheet" />
+
+</head>
+<body ng-app='login'>
+<div class="header1">
+  <h1>Communal Appliance Sharing Network
+  <div class="header1-right">
+  </div>
+  </h1>
+ </div>
+ <div>
+ <h2 class="header2">Login Page</h2>
+ <form ng-controller="registerController" name="myForm" ng-submit ="sendData()"> 
+ <div class="container" >  
+  <label>User Name </label>   
+ <div class="row"> 
+  <input type="text" name="userName" placeholder= "User Name"  ng-model="login.UserName" required />  
+  </div>
+ <label>Password</label>
+  <div class="row"> 
+   <input type="password" name="password" class="form-control"  ng-model="password" required />
+   </div>
+ <button  aria-label="Close" type="submit"class="button">
+      Login
+    </button>
+    </div>
+ 
+</form>
+     <h2>New User? Click here to register -> </h2>
+    <a href="Registration.html" class="button">Register</a>
+</body>
+
+</html>
+<div ng-view></div>
+
+</body>
+</html>
