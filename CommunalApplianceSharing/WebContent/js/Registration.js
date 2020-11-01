@@ -7,7 +7,7 @@
         var confirm = $mdDialog.confirm()
           .title('Do you want to continue with the registration?')
           .textContent('You agree that by registering into our application, you have read, understood, and agree to be bound by all of these Terms and Conditions displayed in our home page. If you do not agree with all of these Terms and Conditions, then you are expressly prohibited from using the Site and you must discontinue use immediately.')
-          .ariaLabel('Registered') 
+          .ariaLabel('Registered')
           .targetEvent(ev)
           .ok('Yes')
           .cancel('No');
