@@ -35,6 +35,7 @@
 		
         <input type="submit" value="LEND"/>
     </form>
+	</div>
 </body>
 
 </body>
