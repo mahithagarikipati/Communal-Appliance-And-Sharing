@@ -23,7 +23,7 @@ userLogin.controller("registerController", [ '$scope', '$http','$window','$mdDia
                             .ok('Close')
                             .targetEvent( );
                $mdDialog.show(check).then(function () {
-                   window.location.href = "home.html";
+                   window.location.href = "home.html?userName="+$scope.login.UserName;
                    });
               }
               else{

@@ -6,7 +6,7 @@ import org.json.JSONObject;
 
 public class LoginDAO {
 	public String addUserRecord(JSONObject obj) {
-		String message=null;
+		String message="SUCCESS";
 		String password = null;	
 		String userName = null;
 try {
@@ -24,7 +24,7 @@ try {
 			}
 			con.close();
 			
-			message = "SUCCESS";
+
 			
 			
      }
@@ -34,7 +34,7 @@ try {
      }
 public String userValidation(String userName, String password) {
 	String message = "SUCCESS";
-	int count	   = 0;
+	int count	   = 0;	
 			try {
 				Connection con = getConnection();
 				Statement stmt=con.createStatement();

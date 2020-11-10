@@ -1,4 +1,3 @@
-package com.jwt.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -35,10 +34,8 @@ public class ApplianceRegistrationServlet extends HttpServlet {
        
         
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection(
-					"jdbc:mysql://projectdb-do-user-8049100-0.b.db.ondigitalocean.com:25060/projectDB", "doadmin", "nvxvc24irofl66ym"); 
- 
+			Class.forName("com.mysql.jdbc.Driver");
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/world","mahitha","Test123"); 
             ps = con.prepareStatement("insert into appliance values(?,?,?,?,?,?,?)");
             ps.setString(1, null);
             ps.setString(2, userID);

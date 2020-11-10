@@ -13,13 +13,27 @@
 <script src ="lib/angular-aria.js"></script>
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
  <link href="css/home.css" rel="stylesheet" />
+ <script>
+ function getUrlVars() {
+	    var vars = {};
+	    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+	        vars[key] = value;
+	    });
+	    return vars;
+	}
+ var userName = getUrlVars()["userName"];
+ </script>
 </head>
 <body  ng-app ="home" onload=addFields();> 
 <div class="header1">
   <h1>Communal Appliance Sharing Network
   <div class="header1-right">
+ <a class="hover" href="profile.html" onclick="location.href=this.href+'?username='+userName;return false;"> <i class="fa fa-user" aria-hidden="true"></i>Profile</a>
+ &nbsp;
+ <a class="hover" href="notification.html" onclick="location.href=this.href+'?username='+userName;return false;"> <i class="fa fa-bell" aria-hidden="true"></i>Notification</a>
+   &nbsp;
+ 	<a class="hover" href="#contact"><i class="fa fa-address-book-o" aria-hidden="true"></i>Contact Us</a>
     <a class="active" href="index.html"><i class="fa fa-sign-out"></i>Logout</a>
-    <a class="hover" href="#contact"><i class="fa fa-address-book-o" aria-hidden="true"></i>Contact Us</a>
   </div>
   </h1>
 </div>
@@ -29,12 +43,12 @@
  <div>
 <h2 class="header2">Lenders in your Community</h2>
  <form ng-controller="homeController" name="myForm"> 
- 
+ </form>
  
 </div>
  <div id="container"/>
  
-</form>
+
 </div>
 </body>
 
