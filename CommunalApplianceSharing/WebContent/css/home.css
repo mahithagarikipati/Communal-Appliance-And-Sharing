@@ -4,10 +4,25 @@
     display:inline-block;
 }
 
-input,
 button {
-    background-color:transparent;
-    border:0;
+  	background-color: #4CAF50;
+	border: none;
+	color:green;
+	font-size: 20px;
+	padding: 8px 120px;
+	text-decoration: none;
+	margin: 3px 20px 10px 120px;
+	cursor: pointer;
+	border: 2px solid green;
+	border-radius: 4px;
+}
+P {
+	padding: 10px 30px;
+	text-align: left;
+	color: green;
+	font-size: 30px;
+	overflow: hidden;
+	background-color: white;
 }
 
 .input-container{
@@ -47,12 +62,14 @@ input[type=button], input[type=submit], input[type=reset], .button {
 }
 input[type=text], input[type=number], input[type=address], textarea,
 	input[type=password], input[type=tel], input[type=email] {
-	width: 60%;
-	padding: 12px 200px;
-	margin: 3px 20px 10px 120px;
+	width: 70%;
+	padding: 22px 20px;
+	margin: 20px 20px 10px 120px;
 	box-sizing: border-box;
 	border: 2px solid green;
 	border-radius: 4px;
+	font-weight: 2px;
+	text-align:left;
 }
 
 label {
@@ -90,6 +107,15 @@ form {
 }
 
 .header2 {
+	padding: 30px 30px;
+	text-align: left;
+	color: rgb(0, 0, 0);
+	font-size: 30px;
+	overflow: hidden;
+	background-color: white;	
+	margin: 20px 20px 10px 120px;
+}
+.header3 {
 	padding: 60px 60px;
 	text-align: left;
 	color: rgb(0, 0, 0);

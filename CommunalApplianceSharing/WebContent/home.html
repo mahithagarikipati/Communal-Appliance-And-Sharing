@@ -24,7 +24,7 @@
  var userName = getUrlVars()["userName"];
  </script>
 </head>
-<body  ng-app ="home" onload=addFields();> 
+<body  ng-app ="home" ng-controller="homeController" data-ng-init="addFields()"> 
 <div class="header1">
   <h1>Communal Appliance Sharing Network
   <div class="header1-right">
@@ -38,10 +38,11 @@
   </h1>
 </div>
 <div>
-  <a href="ApplianceRegistration.html" class="button" onclick="location.href=this.href+'?username='+userName;return false;"> Lender Appliance Registration </a>
+<p>
+  <a href="ApplianceRegistration.html" class="button" onclick="location.href=this.href+'?username='+userName;return false;"> Lender Appliance Registration </a></p>
+ <h3 class="header2"><b>Lenders in your Community</b></h3>
  </div>
  <div>
-<h2 class="header2">Lenders in your Community</h2>
  <form ng-controller="homeController" name="myForm"> 
  </form>
  
