@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    	
+    <wb-module deploy-name="CommunalApplianceSharing">
+        		
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        		
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module archiveName="mysql-connector-java-8.0.16.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/D:/JUnitTest/mysql-connector-java-8.0.16.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="servlet-api.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/D:/JUnitTest/servlet-api.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="json-20200518.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/D:/JUnitTest/json-20200518.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mockito-all-2.0.2-beta.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/D:/JUnitTest/mockito-all-2.0.2-beta.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="junit-4.10.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/D:/JUnitTest/junit-4.10.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        		
+        <property name="context-root" value="CommunalApplianceSharing"/>
+        		
+        <property name="java-output-path" value="/CommunalApplianceSharing/build/classes"/>
+        	
+    </wb-module>
+    
+</project-modules>
