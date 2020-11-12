@@ -30,7 +30,7 @@
 </div>
 <div>
 	<h2 class="header2">Appliance Registration</h2>
-	<form name="form1" action="/ApplianceRegistrationService.java" method="post"> 
+	<form name="form1" ng-controller="registerAppliance"> 
   		<label for="username">Username </label>
   			<input type="text" id="username" name="username" placeholder= "Username" size="15" ng-model="username" required><br>
  		<label for="appliance_name">Item Name </label>   
@@ -54,7 +54,9 @@
 				  <label for="agree">agree </label><br>
  				<input type="radio" id="disagree" name="termsconditions" value="disagree">  
 					<label for="disagree">disagree </label>
-		<input type="submit" value="LEND">
+		<button  aria-label="Close" type="submit"class="button" ng-click="myForm.$valid && showConfirm($event)">
+      Appliance Register
+    </button>
 	</form>
 </div>
 </body>
