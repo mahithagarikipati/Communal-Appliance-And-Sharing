@@ -19,7 +19,7 @@ public class ApplianceRegistrationDAO {
 		String availTo = null;	
 		double pricePerDay = 0;
 	
-		try {
+		try { 
 			
 			Connection con = getConnection();
 			userName 	= obj.getString("username");
