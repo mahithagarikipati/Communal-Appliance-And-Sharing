@@ -20,8 +20,8 @@ public class ApplianceRegistrationDAO {
 		double pricePerDay = 0;
 	
 		try { 
-			
-			Connection con = getConnection();
+			ConnectionUtility ConnectionUtility = new ConnectionUtility();
+			Connection con = ConnectionUtility.getConnection();
 			userName 	= obj.getString("username");
 			appName  	= obj.getString("appliance_name");
 			appDesc  	= obj.getString("appliance_desc");
@@ -53,17 +53,6 @@ public class ApplianceRegistrationDAO {
 		 return message;
 	}
 	 
-	public Connection getConnection() throws SQLException {
-		Connection con = null;
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/world","mahitha","Test123"); 
 
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}  
-		return con;
-		
-	}
 	
 }

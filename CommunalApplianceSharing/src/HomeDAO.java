@@ -15,7 +15,8 @@ public class HomeDAO {
 		int count = 0;
 		JSONArray arr = new JSONArray();
 		try {
-			Connection con = getConnection();
+			ConnectionUtility ConnectionUtility = new ConnectionUtility();
+			Connection con = ConnectionUtility.getConnection();
 			Statement stmt=con.createStatement();
 			ResultSet rs1=stmt.executeQuery("select count(*) from user a , appliance b where a.zipcode = (select zipcode from user where username = '"+userName+"') and a.username = b.username and available_to_dt > sysdate() and a.username not in ('"+userName+"')");  
 			if(rs1.next()){
@@ -44,16 +45,5 @@ public class HomeDAO {
 		 return arr;
 	}
 	 
-	public Connection getConnection() throws SQLException {
-		Connection con = null;
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/world","mahitha","Test123"); 
 
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}  
-		return con;
-		
-	}
 }

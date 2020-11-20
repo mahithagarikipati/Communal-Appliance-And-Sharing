@@ -19,7 +19,8 @@ public class RegistrationDAO {
 		int user_id = 0;
 		try {
 			
-			Connection con = getConnection();
+			ConnectionUtility ConnectionUtility = new ConnectionUtility();
+			Connection con = ConnectionUtility.getConnection();
 			firstName = obj.getString("firstname");
 			lastName  = obj.getString("lastname");
 			userName  = obj.getString("username");
@@ -58,7 +59,8 @@ public class RegistrationDAO {
 		String message = "SUCCESS";
 		int count	   = 0;
 		try {
-			Connection con = getConnection();
+			ConnectionUtility ConnectionUtility = new ConnectionUtility();
+			Connection con = ConnectionUtility.getConnection();
 			Statement stmt=con.createStatement();
 			ResultSet rs=stmt.executeQuery("select count(*) from user where username ='"+userName+"'");  
 			if(rs.next()) {
@@ -76,17 +78,6 @@ public class RegistrationDAO {
 		 return message;
 	}
 	 
-	public Connection getConnection() throws SQLException {
-		Connection con = null;
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/world","mahitha","Test123"); 
-
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}  
-		return con;
-		
-	}
+	
 	
 }

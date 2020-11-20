@@ -11,7 +11,8 @@ public class LoginDAO {
 		String userName = null;
 try {
 	int count	   = 0;
-			Connection con = getConnection();
+	ConnectionUtility ConnectionUtility = new ConnectionUtility();
+	Connection con = ConnectionUtility.getConnection();
 			userName  = obj.getString("username");
 			password  = obj.getString("password");
 			Statement stmt=con.createStatement();
@@ -36,7 +37,8 @@ public String userValidation(String userName, String password) {
 	String message = "SUCCESS";
 	int count	   = 0;	
 			try {
-				Connection con = getConnection();
+				ConnectionUtility ConnectionUtility = new ConnectionUtility();
+				Connection con = ConnectionUtility.getConnection();
 				Statement stmt=con.createStatement();
 				ResultSet rs=stmt.executeQuery("select count(*) from user where username ='"+userName+"'and password='"+password+"'");  
 				if(rs.next()) {
@@ -53,22 +55,6 @@ public String userValidation(String userName, String password) {
 			}
 			return message; 
 		}
-		 
-		public Connection getConnection() throws SQLException {
-			Connection con = null;
-			try {
-				Class.forName("com.mysql.jdbc.Driver");
-				con=DriverManager.getConnection("jdbc:mysql://localhost:3306/world","mahitha","Test123"); 
 
-
-			} catch (ClassNotFoundException e) {
-				e.printStackTrace();
-			}  
-			return con;
-			
-		
-		
-	
-	}
 
 }

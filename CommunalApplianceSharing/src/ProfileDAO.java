@@ -5,8 +5,9 @@ import java.sql.*;
 import org.json.JSONObject;
 
 public class ProfileDAO {
+String className ="com.mysql.jdbc.Driver";
 
-	public String updateUserRecord(JSONObject obj) {
+	public String updateUserRecord(JSONObject obj) throws org.json.JSONException{
 		String message = null;
 		String firstName = null;
 		String lastName = null;
@@ -19,7 +20,8 @@ public class ProfileDAO {
 		int user_id = 0;
 		try {
 			
-			Connection con = getConnection();
+			ConnectionUtility ConnectionUtility = new ConnectionUtility();
+			Connection con = ConnectionUtility.getConnection();
 			firstName = obj.getString("firstname");
 			lastName  = obj.getString("lastname");
 			userName  = obj.getString("username");
@@ -29,7 +31,7 @@ public class ProfileDAO {
 			zipCode	  = obj.getInt("zipcode");
 			email     = obj.getString("email");
 			Statement stm=con.createStatement();
-
+			
 			PreparedStatement stmt=con.prepareStatement("update user set password ='"+password+"', email = '"+email+"', phone_no ='"+phone+"', street_address='"+address+"',zipcode ='"+zipCode+"' where username ='"+userName+"'");
 	
 			stmt.executeUpdate();
@@ -42,7 +44,7 @@ public class ProfileDAO {
 		 return message;
 	}
 	
-	public JSONObject getData(String userName) {
+	public JSONObject getData(String userName) throws SQLSyntaxErrorException {
 		String message = "SUCCESS";
 		int count	   = 0;
 		String firstName=null;
@@ -54,7 +56,8 @@ public class ProfileDAO {
 		int zipcode = 0;
 		JSONObject obj = new JSONObject();
 		try {
-			Connection con = getConnection();
+			ConnectionUtility ConnectionUtility = new ConnectionUtility();
+			Connection con = ConnectionUtility.getConnection();
 			Statement stmt=con.createStatement();
 			ResultSet rs=stmt.executeQuery("select first_name, last_name, password,email, phone_no, street_address,zipcode from user where username ='"+userName+"'");  
 			if(rs.next()) {
@@ -79,21 +82,11 @@ public class ProfileDAO {
 		}
 		catch(Exception e) {
 			e.printStackTrace();
+			return null;
 		}
 		 return obj;
 	}
 	 
-	public Connection getConnection() throws SQLException {
-		Connection con = null;
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/world","mahitha","Test123"); 
 
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}  
-		return con;
-		
-	}
 	
 }

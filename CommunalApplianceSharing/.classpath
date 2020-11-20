@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk-15">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk-15">
 		<attributes>
 			<attribute name="module" value="true"/>
 			<attribute name="owner.project.facets" value="java"/>
@@ -14,10 +14,11 @@
 			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry exported="true" kind="lib" path="D:/JUnitTest/json-20200518.jar"/>
-	<classpathentry exported="true" kind="lib" path="D:/JUnitTest/junit-4.10.jar"/>
-	<classpathentry exported="true" kind="lib" path="D:/JUnitTest/mockito-all-2.0.2-beta.jar"/>
-	<classpathentry exported="true" kind="lib" path="D:/JUnitTest/mysql-connector-java-8.0.16.jar"/>
-	<classpathentry exported="true" kind="lib" path="D:/JUnitTest/servlet-api.jar"/>
+	<classpathentry kind="lib" path="D:/JUnitTest/json-20200518.jar"/>
+	<classpathentry kind="lib" path="D:/JUnitTest/junit-4.10.jar"/>
+	<classpathentry kind="lib" path="D:/JUnitTest/mockito-all-2.0.2-beta.jar"/>
+	<classpathentry kind="lib" path="D:/JUnitTest/mysql-connector-java-8.0.16.jar"/>
+	<classpathentry kind="lib" path="D:/JUnitTest/servlet-api.jar"/>
+	<classpathentry kind="lib" path="D:/JUnitTest/jsonassert-1.5.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

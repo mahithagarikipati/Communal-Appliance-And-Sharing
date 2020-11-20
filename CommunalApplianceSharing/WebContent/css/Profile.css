@@ -29,6 +29,7 @@ input[type=text], input[type=number], input[type=address], textarea,
 	border-radius: 4px;
 }
 
+
 label {
 	float: left;
 	width: 10%;
