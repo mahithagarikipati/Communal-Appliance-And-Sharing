@@ -3,6 +3,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLSyntaxErrorException;
 import java.sql.Statement;
 
 import org.json.JSONArray;
@@ -10,7 +11,7 @@ import org.json.JSONObject;
 
 public class HomeDAO {	
 	
-	public JSONArray getData(String userName) {
+	public JSONArray getData(String userName) throws SQLSyntaxErrorException{
 
 		int count = 0;
 		JSONArray arr = new JSONArray();
