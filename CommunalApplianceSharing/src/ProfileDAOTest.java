@@ -49,12 +49,12 @@ public class ProfileDAOTest {
 		       obj.put("mode", "UPDATE");
 		       obj.put("firstname", "Alex");
 		       obj.put("address", "Baker Streel");
-		       obj.put("phone", "7687");
+		       obj.put("phone", "7687121");
 		       obj.put("psw", "Hellow12");
 		       obj.put("pswr", "Hellow12");
 		       obj.put("email", "ghhj@gjh.com");
 		       obj.put("lastname", "List");
-		       obj.put("username", "AlexList11");  
+		       obj.put("username", "AlexList11");   
 
 		    assertEquals("SUCCESS", profiledao.updateUserRecord(obj));
 		    //expected username parameter to retrieve the data
@@ -63,7 +63,7 @@ public class ProfileDAOTest {
 		       obj.put("mode", "UPDATE");
 		       obj.put("firstname", "Alex");
 		       obj.put("address", "Baker Streel");
-		       obj.put("phone", "7687");
+		       obj.put("phone", "7687121");
 		       obj.put("psw", "Hellow12");
 		       obj.put("pswr", "Hellow12");
 		       obj.put("email", "ghhj@gjh.com");
@@ -79,7 +79,7 @@ public class ProfileDAOTest {
 		       obj.put("zipcode", 123123);
 		       obj.put("firstName", "Alex");
 		       obj.put("lastName", "List");
-		       obj.put("phone_no", "7687");
+		       obj.put("phone_no", "7687121");
 		       obj.put("password", "Hellow12");
 		       obj.put("address", "Baker Streel");
 		       obj.put("userName", "AlexList11");  

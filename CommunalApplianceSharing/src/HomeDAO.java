@@ -31,10 +31,10 @@ public class HomeDAO {
 				obj.put("firstName", rs.getString(2));
 				obj.put("lastName", rs.getString(3));
 				obj.put("appliance_id", rs.getInt(4));
-				obj.put("appliance_desc", rs.getString(5));
+				obj.put("appliance_desc", rs.getString(5)); 
 				obj.put("appliance_name", rs.getString(6));
 				arr.put(obj);
-				}
+				} 
 			}
 
 			con.close();  

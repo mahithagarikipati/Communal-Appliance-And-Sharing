@@ -51,8 +51,8 @@ public class HomeDAOTest {
 			
 			 JSONObject obj = new JSONObject();
 			 JSONObject obj1 = new JSONObject();
-			 JSONObject obj2 = new JSONObject();
-		       obj.put("appliance_id", 1);
+			 JSONObject obj2 = new JSONObject(); 
+		       obj.put("appliance_id", 1); 
 		       obj.put("firstName", "Alex");
 		       obj.put("lastName", "List");
 		       obj.put("appliance_name", "Lawn mover");
@@ -73,11 +73,17 @@ public class HomeDAOTest {
 		       obj2.put("appliance_desc", "IFB Brand - 10 lit capacity");
 		       obj2.put("userName", "AlexList11");  
 		       arr.put(obj2);
-		       JSONAssert.assertEquals(arr, homedao.getData("Sherlock221"),true);     
+		       JSONAssert.assertEquals(arr, homedao.getData("Sherlock221"),true);  
+		       
+		       arr = new JSONArray();
+		       JSONAssert.assertNotEquals(arr, homedao.getData("Sherlock221"),true);   
 			
 		       ConnectionUtility.setDriver("jdbc:mysql://localhost:3306/testschemaaaa");
 		       arr = new JSONArray();
 				JSONAssert.assertEquals(arr, homedao.getData(null),true); 
+				
+				arr = new JSONArray();
+			       JSONAssert.assertEquals(arr, homedao.getData(""),true);   
 			
 			 
 		}
