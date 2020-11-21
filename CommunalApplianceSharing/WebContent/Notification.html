@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome to Communal Appliances/Tool Sharing Application</title>
+ <link href="css/bootstrap.css" rel="stylesheet" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="lib/angular.js"></script>
+<script src="lib/angular-messages.js"></script>
+<script src="js/Notification.js"></script>
+<script src ="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.2.1/angular-material.js"></script>
+<script src ="lib/angular-animate.js"></script>
+<script src ="lib/angular-aria.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
+ <link href="css/Notification.css" rel="stylesheet" />
+ <script>
+ function getUrlVars() {
+	    var vars = {};
+	    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+	        vars[key] = value;
+	    });
+	    return vars;
+	}
+ var userName = getUrlVars()["username"];
+ </script>
+</head>
+<body  ng-app ="notification" ng-controller="notificationController" data-ng-init="addFields()"> 
+<div class="header1">
+  <h1>Communal Appliance Sharing Network
+  <div class="header1-right">
+ <a class="hover" href="profile.html" onclick="location.href=this.href+'?username='+userName;return false;"> <i class="fa fa-user" aria-hidden="true"></i>Profile</a>
+ &nbsp;
+ <a class="hover" href="Notification.html" onclick="location.href=this.href+'?username='+userName;return false;"> <i class="fa fa-bell" aria-hidden="true"></i>Notification</a>
+   &nbsp;
+ 	<a class="hover" href="#contact"><i class="fa fa-address-book-o" aria-hidden="true"></i>Contact Us</a>
+    <a class="active" href="index.html"><i class="fa fa-sign-out"></i>Logout</a>
+  </div>
+  </h1>
+</div>
+<div>
+<p>
+ 
+ </div>
+ <div>
+ <form ng-controller="notificationController" name="myForm"> 
+ </form>
+ 
+</div>
+ <div id="container"/>
+ 
+
+</div>
+</body>
+
+</html>
