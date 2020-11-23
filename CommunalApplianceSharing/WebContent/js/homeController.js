@@ -33,10 +33,11 @@
             var button = document.createElement("input");
             button.type = "button";
              button.value = "Details";
-             var id=response.data[i].appliance_id;
-             button.onclick =( function (id) {
+             var id = response.data[i].appliance_id;
+             var userName = response.data[i].userName;
+             button.onclick =( function (userName, id) {
                  return function(){
-                 window.location.href = "applianceDetails.html?userName="+userName+"&appId="+id;   }       })(id);
+                 window.location.href = "ApplianceDetails.html?userName="+userName+"&appId="+id;   }       })(userName, id);
              para.appendChild(input);
              para.appendChild(button);
              container.appendChild(para);

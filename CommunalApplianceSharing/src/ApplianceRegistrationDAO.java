@@ -46,6 +46,7 @@ public class ApplianceRegistrationDAO {
                 System.out.println("Your appliance is successfully registered...");
                 message = "SUCCESS";
             }
+
 		}
 		catch(Exception e) {
 			e.printStackTrace();

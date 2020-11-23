@@ -25,36 +25,9 @@ try {
 			}
 			con.close();
 			
-
-			
-			
      }
     catch(Exception e) {
           e.printStackTrace();}
      return message;
      }
-public String userValidation(String userName, String password) {
-	String message = "SUCCESS";
-	int count	   = 0;	
-			try {
-				ConnectionUtility ConnectionUtility = new ConnectionUtility();
-				Connection con = ConnectionUtility.getConnection();
-				Statement stmt=con.createStatement();
-				ResultSet rs=stmt.executeQuery("select count(*) from user where username ='"+userName+"'and password='"+password+"'");  
-				if(rs.next()) {
-					count = rs.getInt(1);
-					if(count != 1) {
-					message="INVALID";
-					}
-				}
-				con.close();  
-				
-			}
-			catch(Exception e) {
-				e.printStackTrace();
-			}
-			return message; 
-		}
-
-
 }
