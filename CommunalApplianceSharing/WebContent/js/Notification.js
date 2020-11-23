@@ -28,11 +28,9 @@
              input.maxLength ="500";
              input.rows ="4";
               input.setAttribute('ng-model',response.data[i].appliance_id);
-              input.value =response.data[i].firstName+" "  +response.data[i].lastName+"  ("+response.data[i].userName+")"+"\r\n"
-              +"Item listed for Lending : " +response.data[i].appliance_name+"\r\n"+response.data[i].appliance_desc;
-             var id=response.data[i].appliance_id;
-             para.appendChild(input);
-             container.appendChild(para);
+              input.value =response.data[i].name+" " +"has requested to borrow" +response.data[i].item+"  ("+response.data[i].userName+")"+"\r\n"
+              +"that you have listed , Name:" +response.data[i].name+"\r\n"+"Contact number: "+response.data[i].contact_number +"zipcode: "+response.data[i].zipcode;
+             
              
          }
          if(number==0){
