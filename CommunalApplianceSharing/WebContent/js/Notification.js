@@ -14,7 +14,7 @@
          }
      }).then(function(response,$window) {
         
-         console.log(response.data);
+         console.log(response.data); 
       
          $scope.array = response.data;
          var number = response.data.length; 
