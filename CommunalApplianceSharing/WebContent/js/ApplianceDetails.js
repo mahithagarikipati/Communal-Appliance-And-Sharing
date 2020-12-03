@@ -28,7 +28,14 @@ details.controller("detailsController", [ '$scope', '$http','$window','$mdDialog
               input.value = "Lender's Name: " +response.data.firstName+" "+response.data.lastName+" "+"\r\n"
 			  + "Lender's Address: " +response.data.streetAddress+"\r\n" + "Phone Number: " +response.data.phoneNo+" "+"\r\n" 
 			  + "Price: " +response.data.price_per_day+"\r\n" + "Available Dates: " +response.data.available_from_dt+" to "+response.data.available_to_dt;
+            var button = document.createElement("input");
+            var button2 = document.createElement("button");
+            button.type = "button";
+            button.value = "Interested";
+            button2.innerHTML = "Back";
             para.appendChild(input);
+            para.appendChild(button2)
+            para.appendChild(button);
             container.appendChild(para);
 		})
 	}       
