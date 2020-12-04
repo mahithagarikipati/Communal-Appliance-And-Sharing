@@ -12,7 +12,7 @@
 <script src ="lib/angular-animate.js"></script>
 <script src ="lib/angular-aria.js"></script>
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
- <link href="css/home.css" rel="stylesheet" />
+ <link href="css/appliancedetails.css" rel="stylesheet" />
  <script>
  function getUrlVars() {
 	    var vars = {};
@@ -23,6 +23,7 @@
 	}
  var userName = getUrlVars()["userName"];
  var appId = getUrlVars()["appId"];
+ var loginDet = getUrlVars()["userlogin"];
  
  </script>
 </head>
@@ -30,7 +31,17 @@
 <div class="header1">
   <h1>Communal Appliance Sharing Network
   <div class="header1-right">
-    <a class="active" href="index.html"><i class="fa fa-sign-out"></i>Logout</a>
+  
+  <a class="hover" href="home.html" onclick="location.href=this.href+'?userName='+loginDet;return false;"><i class="fa fa-home"></i> Home</a>
+     &nbsp;
+     <a class="hover" href="profile.html" onclick="location.href=this.href+'?username='+loginDet;return false;"> <i class="fa fa-user" aria-hidden="true"></i>Profile</a>
+		&nbsp;
+
+ <a class="hover" href="Notification.html" onclick="location.href=this.href+'?username='+loginDet;return false;"> <i class="fa fa-bell" aria-hidden="true"></i>Notification</a>
+   &nbsp;
+    <a class="hover" href="#contact"><i class="fa fa-address-book-o" aria-hidden="true"></i>Contact Us</a>
+   <a class="active" href="index.html"><i class="fa fa-sign-out"></i>Logout</a>
+    
   </div>  
 </h1>
 </div>
@@ -38,15 +49,17 @@
 <p>
  <h3 class="header2"><b>Details</b></h3></p>
 </div>
- <div>
- <form ng-controller="detailsController" name="myForm"> 
- </form>
- 
-</div>
  <div id="container">
  
-
+ 
 </div>
+<form ng-controller="detailsController" name="myForm" ng-submit="sendData()"> <h1>
+<a class="button" href="home.html" onclick="location.href=this.href+'?userName='+loginDet;return false;">Back</a>
+  <button  aria-label="Interested" type="submit"class="button" ng-click="myForm.$valid && showConfirm($event)">
+      Interested
+    </button>
+    </h1>
+ </form>
 </body>
 
 </html>

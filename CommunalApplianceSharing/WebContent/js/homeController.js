@@ -34,10 +34,10 @@
             button.type = "button";
              button.value = "Details";
              var id = response.data[i].appliance_id;
-             var userName = response.data[i].userName;
-             button.onclick =( function (userName, id) {
+             var userName1 = response.data[i].userName;
+             button.onclick =( function (userName1, id,userName) {
                  return function(){
-                 window.location.href = "ApplianceDetails.html?userName="+userName+"&appId="+id;   }       })(userName, id);
+                 window.location.href = "ApplianceDetails.html?userName="+userName1+"&appId="+id+"&userlogin="+userName;   }       })(userName1, id,userName);
              para.appendChild(input);
              para.appendChild(button);
              container.appendChild(para);

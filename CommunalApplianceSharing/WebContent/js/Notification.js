@@ -28,10 +28,11 @@
              input.maxLength ="500";
              input.rows ="4";
               input.setAttribute('ng-model',response.data[i].appliance_id);
-              input.value =response.data[i].name+" " +"has requested to borrow" +response.data[i].item+"  ("+response.data[i].userName+")"+"\r\n"
-              +"that you have listed , Name:" +response.data[i].name+"\r\n"+"Contact number: "+response.data[i].contact_number +"zipcode: "+response.data[i].zipcode;
-             
-             
+              input.value =response.data[i].name+" " +"has requested to borrow " +response.data[i].item+"  that you have listed "+"\r\n"
+              +" Name : " +response.data[i].fullname+"\r\n"+"Contact number : "+response.data[i].contact_number +"\r\n"+"zipcode : "+response.data[i].zipcode;
+         para.appendChild(input);
+         para.appendChild(document.createElement("br"));
+         container.appendChild(para);  
          }
          if(number==0){
              var input = document.createElement("p");

@@ -21,6 +21,8 @@ public class ApplianceService  extends HttpServlet{
 		String appId = null;
 		String mode = null;
 		String response= null;
+		String borrowerUserName = null;
+		String message=null;
 		
 		try {
 			StringBuffer sb = null;
@@ -29,14 +31,26 @@ public class ApplianceService  extends HttpServlet{
 			ApplianceDAO dao = new ApplianceDAO();
 	        userName = req.getParameter("userName");
 	        appId = req.getParameter("appId");
-	        mode ="GETDATA";	 
-			data = dao.getData(userName, appId);
-			res.setContentType("application/json");
-			res.setCharacterEncoding("UTF-8"); 
-			PrintWriter out = res.getWriter();
-			out.print(data);
-			res.setStatus(200);		
-		}
+	        mode = req.getParameter("mode");
+	        if(mode.equalsIgnoreCase("GETDATA")) {
+	        	data = dao.getData(userName, appId);
+				res.setContentType("application/json"); 
+				res.setCharacterEncoding("UTF-8"); 
+				PrintWriter out = res.getWriter();
+				out.print(data);
+				res.setStatus(200);		
+
+	        }
+	        else {
+	        	borrowerUserName = req.getParameter("borrowerName");
+	        	message = dao.addData(userName, appId,borrowerUserName);
+	        	res.setContentType("text/plain"); 
+				res.setCharacterEncoding("UTF-8"); 
+				res.getWriter().write(message); 
+				res.setStatus(200);
+	        }
+			
+					}
 		catch(Exception e) {
 			System.out.println("Exception in Appliance Details Service!!! "+e);
 		}

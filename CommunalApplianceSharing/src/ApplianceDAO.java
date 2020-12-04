@@ -1,7 +1,9 @@
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLSyntaxErrorException;
 import java.sql.Statement;
+import java.util.Date;
 
 import org.json.JSONObject;
 
@@ -48,6 +50,30 @@ String className ="com.mysql.cj.jdbc.Driver";
 		}
 		return data;
 	}
-	 
+	public String addData(String userName, String appId,String borrowerUserName) {
+		String message = "FAIL";
+		try {
+			
+			ConnectionUtility ConnectionUtility = new ConnectionUtility();
+			Connection con = ConnectionUtility.getConnection();
+			Statement stm=con.createStatement();
+			Date dateNow = new java.sql.Date(System.currentTimeMillis());
+
+			PreparedStatement stmt=con.prepareStatement("insert into notification values (?,?,?,?,?)");
+			stmt.setString(1,null);
+			stmt.setInt(2, Integer.parseInt(appId));
+			stmt.setString(3, userName);
+			stmt.setString(4, borrowerUserName);
+			stmt.setDate(5,(java.sql.Date) dateNow);
+			stmt.executeUpdate();
+			System.out.println("Insert success");
+			message = "SUCCESS";
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		 return message;
+	}
+	
 
 }
