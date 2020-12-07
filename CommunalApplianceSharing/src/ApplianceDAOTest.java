@@ -3,6 +3,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
+
 import javax.sql.DataSource;
 
 import org.json.JSONObject;
@@ -40,19 +42,29 @@ public class ApplianceDAOTest {
 		public void getData() throws ClassNotFoundException, SQLException{
 
 			 JSONObject data = new JSONObject();
-			 data.put("firstName", "Adrianna");
-			 data.put("lastName", "Mckeown");
-			 data.put("streetAddress", "5003 Cambridge Oaks Dr");
-			 data.put("phoneNo", "704-989-1797"); 
-			 data.put("price_per_day", "8.0");
-			 data.put("available_from_dt", "2020-12-01");
-			 data.put("available_to_dt", "2020-12-05");  
+			 data.put("firstName", "Alex");
+			 data.put("lastName", "List");
+			 data.put("streetAddress", "Baker Streel");
+			 data.put("phoneNo", "7687121"); 
+			 data.put("price_per_day", "3.0");
+			 data.put("available_from_dt", "2020-11-04");
+			 data.put("available_to_dt", "2020-11-26");  
 
 
-			JSONAssert.assertEquals(data, appliancedao.getData("amckeow3", "2"),true);
+			JSONAssert.assertEquals(data, appliancedao.getData("AlexList11", "2"),true);
 			
-			JSONAssert.assertNotEquals(data, appliancedao.getData("amck3", "3"),true);
+			JSONAssert.assertNotEquals(data, appliancedao.getData("AlexList111", "3"),true);
 			
+			JSONAssert.assertNotEquals(data, appliancedao.getData(null,null),true);
+			
+		}
+
+		@Test
+		public void addNotify() throws ClassNotFoundException, SQLException, NumberFormatException,SQLIntegrityConstraintViolationException{
+			String message = "SUCCESS";
+			assertEquals(message,appliancedao.addData("AlexList11", "2", "TestAClient"));
+			assertEquals(message,appliancedao.addData("AlexList11", "3", "TestAClient"));
+			assertEquals("FAIL",appliancedao.addData("", null, null));
 		}
 		
 		
