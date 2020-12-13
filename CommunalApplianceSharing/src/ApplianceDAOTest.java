@@ -45,7 +45,7 @@ public class ApplianceDAOTest {
 			 data.put("firstName", "Alex");
 			 data.put("lastName", "List");
 			 data.put("streetAddress", "Baker Streel");
-			 data.put("phoneNo", "7687121"); 
+			 data.put("phoneNo", "76871211"); 
 			 data.put("price_per_day", "3.0");
 			 data.put("available_from_dt", "2020-11-04");
 			 data.put("available_to_dt", "2020-11-26");  

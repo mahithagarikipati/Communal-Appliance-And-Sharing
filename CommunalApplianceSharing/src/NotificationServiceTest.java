@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.Before;
 import org.junit.Rule;
@@ -18,8 +19,9 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.skyscreamer.jsonassert.JSONAssert;
 
-public class ApplianceServiceTest extends Mockito{
+public class NotificationServiceTest extends Mockito{
 	@Mock
 	private DataSource ds;
 	@Mock
@@ -28,7 +30,7 @@ public class ApplianceServiceTest extends Mockito{
 	private PreparedStatement ps;
 	@Mock
 	private ResultSet rs;
-	ApplianceDAO appliancedao = new ApplianceDAO();
+	NotificationDAO notificationdao = new NotificationDAO();
     ConnectionUtility connect = new ConnectionUtility();
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();
@@ -41,30 +43,33 @@ public class ApplianceServiceTest extends Mockito{
 public void serviceTest() throws Exception {
 	HttpServletRequest req = mock(HttpServletRequest.class);
 	HttpServletResponse res = mock(HttpServletResponse.class);
-	 when(req.getParameter("userName")).thenReturn("AlexList11");
+	 when(req.getParameter("userName")).thenReturn("Damon");
      when(req.getParameter("appId")).thenReturn("2");
      when(req.getParameter("mode")).thenReturn("GETDATA");
+     JSONArray arr = new JSONArray();
 
  	JSONObject data = new JSONObject();
- 	data.put("firstName", "Alex");
-	data.put("lastName", "List");
-	data.put("streetAddress", "Baker Streel");
-	data.put("phoneNo", "76871211"); 
-	data.put("price_per_day", "3.0");
-	data.put("available_from_dt", "2020-11-04");
-	data.put("available_to_dt", "2020-11-26");
+ 	data.put("borrower_username", "Damon"); 
+    data.put("appliance_name", "normal cooker");
+    data.put("phone_no", 987698321);
+    data.put("zipcode", 2985);
     StringWriter sw = new StringWriter();
     PrintWriter pw = new PrintWriter(sw);
      when(res.getWriter()).thenReturn(pw);
 
-     ApplianceService appService =new ApplianceService();
-     appService.doPost(req, res);
-     assertEquals(	data.toString(),sw.toString());
-     data = new JSONObject();
-  	data.put("firstName", "Alex");
- 	data.put("lastName", "List");
- 	data.put("streetAddress", "Baker Streel");
+     NotificationService notificationService =new NotificationService();
+     notificationService.doPost(req, res);
+     arr=new JSONArray();
+     
+     JSONAssert.assertEquals(arr, notificationdao.getData(null),true);
+     
 
+     data = new JSONObject();
+     data.put("borrower_username", "Damon"); 
+     data.put("appliance_name", "normal cooker");
+     data.put("phone_no", 987698321);
+     data.put("zipcode", 2985);
+     arr=new JSONArray();
      assertNotSame(data.toString(),sw.toString());
 
 }
@@ -73,24 +78,29 @@ public void serviceTest() throws Exception {
 public void addData() throws Exception {
 	HttpServletRequest req = mock(HttpServletRequest.class);
 	HttpServletResponse res = mock(HttpServletResponse.class);
-	 when(req.getParameter("userName")).thenReturn("AlexList11");
+	JSONArray arr = new JSONArray();
+	 when(req.getParameter("userName")).thenReturn("Damon");
      when(req.getParameter("appId")).thenReturn("2");
      when(req.getParameter("mode")).thenReturn("ADD");
-     when(req.getParameter("borrowerName")).thenReturn("Sherlock221");
+    // when(req.getParameter("borrowerName")).thenReturn("Sherlock221");
 
     StringWriter sw = new StringWriter();
     PrintWriter pw = new PrintWriter(sw);
      when(res.getWriter()).thenReturn(pw);
 
-     ApplianceService appService =new ApplianceService();
-     appService.doPost(req, res);
-     assertEquals("SUCCESS",sw.toString());
+     NotificationService notificationService =new NotificationService();
+     notificationService.doPost(req, res);
+     //assertEquals("SUCCESS",sw.toString());
+     arr=new JSONArray();
+     
+     JSONAssert.assertEquals(arr, notificationdao.getData(null),true);
 
 }
 @Test
 public void nullTest() throws Exception {
 	HttpServletRequest req = mock(HttpServletRequest.class);
 	HttpServletResponse res = mock(HttpServletResponse.class);
+	JSONArray arr = new JSONArray();
 	 when(req.getParameter("userName")).thenReturn("");
      when(req.getParameter("appId")).thenReturn(null);
      when(req.getParameter("mode")).thenReturn("GETDATA");
@@ -99,9 +109,12 @@ public void nullTest() throws Exception {
     PrintWriter pw = new PrintWriter(sw);
      when(res.getWriter()).thenReturn(pw);
 
-     ApplianceService appService =new ApplianceService();
-     appService.doPost(req, res);
-     assertEquals(data.toString(),sw.toString());
-
+     NotificationService notificationService =new NotificationService();
+     notificationService.doPost(req, res);
+    
+     arr=new JSONArray();
+     
+     JSONAssert.assertEquals(arr, notificationdao.getData(null),true);
+     
 }
 }

@@ -39,7 +39,7 @@ public class NotificationDAOTest {
 	public ExpectedException thrown = ExpectedException.none();
 		@Before
 		public void setup(){
-		       ConnectionUtility.setDriver("jdbc:mysql://localhost:3306/mydb");
+		       ConnectionUtility.setDriver("jdbc:mysql://localhost:3306/testschema");
 		}
 		
 		@Test
@@ -52,28 +52,23 @@ public class NotificationDAOTest {
 			 JSONObject obj = new JSONObject();
 			 JSONObject obj1 = new JSONObject();
 			 JSONObject obj2 = new JSONObject(); 
-		       obj.put("name", "Alex"); 
-		       obj.put("item", "cooker");
-		       obj.put("contact_number", 980765);
-		       obj.put("zipcode", 28262);
+		       obj.put("borrower_username", "Damon"); 
+		       obj.put("appliance_name", "normal cooker");
+		       obj.put("phone_no", 987698321);
+		       obj.put("zipcode", 2985);
 		       
 		       arr.put(obj);
-		       obj.put("name", "Shane"); 
-		       obj.put("item", "cooker");
-		       obj.put("contact_number", 984565);
-		       obj.put("zipcode", 28272); 
-		       arr.put(obj1);
-		       obj.put("name", "White"); 
-		       obj.put("item", "telivision");
-		       obj.put("contact_number", 9987465);
-		       obj.put("zipcode", 28572);
-		       arr.put(obj2);
+		       obj.put("borrower_username", "stefan"); 
+		       obj.put("appliance_name", "pressure cooker");
+		       obj.put("phone_no", 987654321);
+		       obj.put("zipcode", 2345);
+		       
 		         
 		       
 		       arr = new JSONArray();
 		          
 			
-		       ConnectionUtility.setDriver("jdbc:mysql://localhost:3306/mydb");
+		       ConnectionUtility.setDriver("jdbc:mysql://localhost:3306/testschema");
 		       arr = new JSONArray();
 				JSONAssert.assertEquals(arr, Notificationdao.getData(null),true); 
 				
