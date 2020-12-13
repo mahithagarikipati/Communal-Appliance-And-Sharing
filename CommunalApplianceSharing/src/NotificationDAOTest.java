@@ -31,7 +31,7 @@ public class NotificationDAOTest {
 	@Mock
 	private Connection connection;
 	@Mock
-	private PreparedStatement ps;
+	private PreparedStatement ps; 
 	@Mock
 	private ResultSet rs;
     NotificationDAO Notificationdao = new NotificationDAO();
