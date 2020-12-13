@@ -166,7 +166,7 @@ public void updateTestNull(){
      catch (org.json.JSONException e) {
  		// TODO Auto-generated catch block
  		e.printStackTrace();
- 		assert(true);
+ 		assert(true); 
  	}
      try {
     	  data = new JSONObject();
