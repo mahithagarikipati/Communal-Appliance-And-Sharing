@@ -39,7 +39,7 @@ public class NotificationServiceTest extends Mockito{
 		       ConnectionUtility.setDriver("jdbc:mysql://localhost:3306/testschema");
 		}
 		
-@Test
+@Test 
 public void serviceTest() throws Exception {
 	HttpServletRequest req = mock(HttpServletRequest.class);
 	HttpServletResponse res = mock(HttpServletResponse.class);
