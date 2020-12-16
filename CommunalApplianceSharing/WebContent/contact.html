@@ -24,33 +24,23 @@
  var userName = getUrlVars()["userName"];
  </script>
 </head>
-<body  ng-app ="home" ng-controller="homeController" data-ng-init="addFields()"> 
+<body>
 <div class="header1">
   <h1>Communal Appliance Sharing Network
   <div class="header1-right">
- <a class="hover" href="profile.html" onclick="location.href=this.href+'?username='+userName;return false;"> <i class="fa fa-user" aria-hidden="true"></i>Profile</a>
+ <a class="hover" href="home.html" onclick="location.href=this.href+'?userName='+userName;return false;"><i class="fa fa-home"></i> Home</a>
  &nbsp;
- <a class="hover" href="Notification.html" onclick="location.href=this.href+'?username='+userName;return false;"> <i class="fa fa-bell" aria-hidden="true"></i>Notification</a>
-   &nbsp;
- <a class="hover" href="contact.html" onclick="location.href=this.href+'?username='+userName;return false;"><i class="fa fa-address-book-o" aria-hidden="true"></i>Contact Us</a>
-&nbsp;
     <a class="active" href="index.html"><i class="fa fa-sign-out"></i>Logout</a>
   </div>
   </h1>
 </div>
 <div>
-<p>
-  <a href="ApplianceRegistration.html" class="button" onclick="location.href=this.href+'?username='+userName;return false;"> Lender Appliance Registration </a></p>
- <h3 class="header2"><b>Lenders in your Community</b></h3>
- </div>
- <div>
- <form ng-controller="homeController" name="myForm"> 
- </form>
- 
-</div>
- <div id="container"/>
- 
-
+<h2 class="header2">Contact Details</h2>
+<p>If you need to get in touch with us,</p>
+<p>Email us at: <b>customersupport@ca.com</b></p>
+<p>Mobile: <b>123-321-4561</b> or <b>123-323-2243</b></p>
+<p>Fax: <b>1221121-122</b></p>
+<p>Address:<b>503 Belmont St, Moorisville, NC 45650</b></p>
 </div>
 </body>
 

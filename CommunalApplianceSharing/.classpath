@@ -15,7 +15,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="D:/JUnitTest/json-20200518.jar"/>
-	<classpathentry kind="lib" path="D:/JUnitTest/junit-4.10.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/JUnitTest/junit-4.10.jar"/>
 	<classpathentry kind="lib" path="D:/JUnitTest/mockito-all-2.0.2-beta.jar"/>
 	<classpathentry kind="lib" path="D:/JUnitTest/mysql-connector-java-8.0.16.jar"/>
 	<classpathentry kind="lib" path="D:/JUnitTest/servlet-api.jar"/>
